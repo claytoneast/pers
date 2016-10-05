@@ -26,22 +26,45 @@ body {
 .ui-controls {
   height: 2rem;
   width: 100%;
-  background: red; }
+  background: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
 
 .spinner-container {
   position: relative;
   width: 100%;
   left: -200px;
-  -webkit-transform: rotate(120deg);
+  -webkit-transform: rotate(0deg);
   height: 100%;
-  transform-origin: center; }
+  transform-origin: center;
+  transition: transform 1s ease-in;
+  z-index: -1; }
 
 .spinner-chip {
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold; }
+
+.spinner-decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  transform: translate(-50%, -50%); }
+  .spinner-decoration.decoration2 {
+    transform: translate(-45%, -45%); }
+  .spinner-decoration.decoration3 {
+    transform: translate(-55%, -55%); }
 
 #spinner1 {
   background: purple;
@@ -49,10 +72,10 @@ body {
 
 #spinner2 {
   background: blue;
-  transform: rotate(120deg) translate(200px) rotate(0deg); }
+  transform: rotate(240deg) translate(200px) rotate(0deg); }
 
 #spinner3 {
   background: grey;
-  transform: rotate(240deg) translate(200px) rotate(0deg); }
+  transform: rotate(120deg) translate(200px) rotate(0deg); }
 
 /*# sourceMappingURL=styles.css.map */
