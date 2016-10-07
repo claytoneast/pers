@@ -19,28 +19,35 @@ function changeTiles (e) {
   if (spinnerLocation === 1) {
     if (targetTileId === 'spinner2') {
       spin('clockwise')
-      spinnerLocation = 2
     } else if (targetTileId === 'spinner3') {
       spin('counterclockwise')
-      spinnerLocation = 3
     }
   } else if (spinnerLocation === 2) {
     if (targetTileId === 'spinner1') {
       spin('counterclockwise')
-      spinnerLocation = 1
     } else if (targetTileId === 'spinner3') {
       spin('clockwise')
-      spinnerLocation = 3
     }
   } else if (spinnerLocation === 3) {
     if (targetTileId === 'spinner1') {
       spin('clockwise')
-      spinnerLocation = 1
     } else if (targetTileId === 'spinner2') {
       spin('counterclockwise')
-      spinnerLocation = 2
     }
   }
+  spinnerLocation = parseInt(targetTileId.replace('spinner', ''), 10)
+  moveUiControlsBackground(targetTileId, e.target)
+}
+
+function moveUiControlsBackground (tileId, targetButton) {
+  let uiControlsBackground = document.getElementById('ui-controls-background')
+  uiControlsBackground.classList = []
+  uiControlsBackground.classList.add(tileId)
+  let uiControls = document.getElementsByClassName('ui-controls-item')
+  Array.from(uiControls).forEach(function (elem) {
+    elem.classList.remove('active')
+  })
+  targetButton.classList.add('active')
 }
 
 function spin (direction) {

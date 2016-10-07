@@ -1,7 +1,24 @@
+@mixin break($size) {
+  @if $size == phone {
+    @media (max-width: 600px) { @content; }
+  } @else if $size == tab {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == desk {
+    @media (min-width: 960px) { @content; }
+  } @else if $size == lg {
+    @media (min-width: 1280px) { @content; }
+  } @else if $size == xl {
+    @media (min-width: 1600px) { @content; }
+  } @else {
+    @media (min-width: $size + 'px') { @content; }
+  }
+}
+
 $menu-height: 2rem;
 
 body {
   margin: 0;
+  // overflow: hidden;
 }
 
 .container {
@@ -11,11 +28,12 @@ body {
   flex-direction: row;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 .ui-container {
-  width: 200px;
-  height: 350px;
+  width: 100vw;
+  height: 100vh;
   border: 1px solid black;
   position: relative;
   display: flex;
@@ -42,7 +60,7 @@ body {
 .spinner-container {
   position: relative;
   width: 100%;
-  left: -200px;
+  left: -200vw;
   -webkit-transform: rotate(0deg);
   height: 100%;
   transform-origin: center;
@@ -82,13 +100,13 @@ body {
 
 #spinner1 {
   background: purple;
-  transform: rotate(0deg) translate(200px) rotate(0deg);
+  transform: rotate(0deg) translate(200vw) rotate(0deg);
 }
 #spinner2 {
   background: blue;
-  transform: rotate(240deg) translate(200px) rotate(0deg);
+  transform: rotate(240deg) translate(200vw) rotate(0deg);
 }
 #spinner3 {
   background: grey;
-  transform: rotate(120deg) translate(200px) rotate(0deg);
+  transform: rotate(120deg) translate(200vw) rotate(0deg);
 }
