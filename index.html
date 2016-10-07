@@ -3,25 +3,99 @@
   <head>
     <!-- <meta charset="utf-8"> -->
     <link rel="stylesheet" href="styles.css" media="screen" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat:700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Clayton Easterbrooks</title>
   </head>
   <body>
     <div class="container">
       <div class="ui-container">
+        <div class="ui-header">
+          Clayton Easterbrooks
+        </div>
         <div class="ui-info">
           <div class="spinner-container" id="spinner-container">
             <div class="spinner-chip" id="spinner1">
-              spinner1
-              me
+              <p>
+                I'm a web developer living near Portland, Oregon.
+                I am passionate about building products that allow people to spend
+                more time doing the things they love, and more time with each other.
+
+              </p>
+              <p>
+                Prior to work as a dev, I've worked as a caterer, framed houses,
+                ran a warehouse, slung lattes, and built fences.
+              </p>
+              <p>
+                In my free time, I enjoy reading(sci-fi, fantasy, lit fiction, and some non-fic on
+                interesting people/events), rock climbing, building questionably useful household furniture,
+                and thinking about the far future of humanity.
+              </p>
             </div>
             <div class="spinner-chip" id="spinner2">
-              spinner2
-              f * d
+              <div class="spinner-chip-inner">
+                <div class="work-item">
+                  <h2>TheMall</h2>
+                  <p>
+                    TheMall was a social shopping destination, integrating hundreds of consumers
+                    favorite brands under one roof. TheMall is designed for an online window-shopping
+                    experience, much like strolling through a physical mall.
+                  </p>
+                  <p>
+                    TheMall was built on a microservices architecture, with a RestifyJS + MongoDB backend
+                    talking JSONAPI to a KoaJS and plain jQuery frontend. I was the main frontend developer
+                    for this site, and built a static mock in ExpressJS, then built the entire frontend
+                    out once the client had committed to the project.
+                  </p>
+                  <p>
+                    The dev version is visible at <a href="http://mall-dev.eyecue.io">mall-dev.eyecue.io</a>
+                  </p>
+                </div>
+                <div class="work-item">
+                  <h2>Powur</h2>
+                  <p>
+                    Power is a network marketing solar sales web app built atop SolarCity's physical
+                    API for acquiring customers. Users sign up under other users, send proposals to other people,
+                    and earn commissions if those individuals follow through and place solar on their property.
+                  </p>
+                  <p>
+                    Powur is built on Rails with Postgres, and Angular 1.4 in TypeScript. I worked on this project for a couple
+                    months, building out custom endpoints and Angular components for users to easily view their
+                    personal sales statistics.
+                  </p>
+                  <p>
+                    The live site can be viewed at <a href="https://powur.com/">powur.com</a>
+                  </p>
+                </div>
+                <div class="work-item">
+                  <h2>Wagick</h2>
+                  <p>
+                    Wagick was my intern project at EyeCue Lab, and is a word game inspired by Scrabble and every RPG ever.
+                    The goal of the game is to spell words, depending on the color of the tiles
+                    that you used to spell the word, you will either damage the opponent, gain experience,
+                    or recieve gold.
+                  </p>
+                  <p>
+                    Wagick was built with Rails, Postgres, and plain jQuery. It has server and client-side
+                    checking on action allowability, and a fun set of graphics and animations.
+                  </p>
+                  <p>
+                    It is hosted at <a href="https://wagick.herokuapp.com">wagick.herokuapp.com</a>
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="spinner-chip" id="spinner3">
-              spinner3
-              @
+              <p>
+                You can contact me at claytoneast@gmail.com
+              <p>
+                I write occasional blurbs on the universe on <a href="http://barefardel.com">barefardel.com</a>
+              </p>
+
+              </p>
+              <p>
+                My projects are visible on github, <a href="https://github.com/claytoneast">github.com/claytoneast</a>
+              </p>
             </div>
             <div class="spinner-decoration decoration1">
 
@@ -35,16 +109,21 @@
           </div>
         </div>
         <div class="ui-controls">
-          <div class="ui-controls-item" data-spinnerTarget="spinner1">
+          <div class="ui-controls-item active" data-spinnerTarget="spinner1">
             me
           </div>
           <div class="ui-controls-item" data-spinnerTarget="spinner2">
-            f * d
+            work
           </div>
           <div class="ui-controls-item" data-spinnerTarget="spinner3">
-            @
+            elsewhere
+          </div>
+          <div id="ui-controls-background" class="spinner1">
+
           </div>
         </div>
+      </div>
+      <div class="spinner-mask">
       </div>
     </div>
   </body>

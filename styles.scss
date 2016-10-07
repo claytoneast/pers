@@ -14,11 +14,19 @@
   }
 }
 
-$menu-height: 2rem;
+$menu-height: 4rem;
+$desk-spinner-offset: 600px;
+$mellowBlack: #1a1a1a;
+$header-gray: #848484;
+$body-gray: #b9b9b9;
+$bg-gray: rgba(242, 242, 242, 0.9);
+
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Cormorant Garamond', serif;
 
 body {
   margin: 0;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -34,27 +42,109 @@ body {
 .ui-container {
   width: 100vw;
   height: 100vh;
-  border: 1px solid black;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  @include break(tab) {
+    max-width: 400px;
+    max-height: 600px;
+  }
 }
 
-.ui-info {
+.ui-header {
+  height: $menu-height;
   width: 100%;
-  height: calc(100% - #{$menu-height});
+  background: $mellowBlack;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
+  color: $header-gray;
+  font-size: 24px;
+  border-bottom: 2px solid $header-gray;
 }
 
 .ui-controls {
   height: $menu-height;
   width: 100%;
-  background: red;
+  background: $mellowBlack;
+  color: $header-gray;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: stretch;
+  z-index: 1;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  border-top: 2px solid $header-gray;
+}
+
+.ui-controls-item {
+  display: flex;
+  flex: 1 1 33%;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
   align-items: center;
+  transition: color 1s ease-in;
+  &.active {
+    color: black;
+  }
+}
+
+#ui-controls-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  height: 100%;
+  background: $header-gray;
+  transition: left 1s ease-in;
+  z-index: -1;
+  &.spinner1 {
+    left: 0;
+  }
+  &.spinner2 {
+    left: 33%;
+  }
+  &.spinner3 {
+    left: 67%;
+  }
+}
+
+.spinner-mask {
+  @include break(tab) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    border: 1500px solid $bg-gray;
+    box-sizing: content-box;
+    pointer-events: none;
+  }
+}
+
+.ui-info {
+  width: 100%;
+  height: calc(100% - 2 * #{$menu-height});
+  background: $bg-gray;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  // background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 .spinner-container {
@@ -65,8 +155,12 @@ body {
   height: 100%;
   transform-origin: center;
   transition: transform 1s ease-in;
-  z-index: -1;
+  z-index: 0;
+  @include break(tab) {
+    left: -$desk-spinner-offset;
+  }
 }
+
 
 .spinner-chip {
   height: 100%;
@@ -76,6 +170,17 @@ body {
   width: 100%;
   font-size: 2rem;
   font-weight: bold;
+  background: $mellowBlack;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: $body-gray;
+  padding: 0px 16px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+a {
+  color: $header-gray;
 }
 
 .spinner-decoration {
@@ -84,29 +189,37 @@ body {
   left: 50%;
   border: 2px solid;
   border-radius: 50%;
-  width: 500px;
-  height: 500px;
+  width: 400vw;
+  height: 400vw;
   z-index: -1;
   transform: translate(-50%, -50%);
   &.decoration2 {
-    transform: translate(-45%, -45%);
-
+    transform: translate(-48%, -49%);
   }
   &.decoration3 {
-    transform: translate(-55%, -55%);
-
+    transform: translate(-51%, -52%);
+  }
+  @include break(tab) {
+    width: calc(2 * #{$desk-spinner-offset});
+    height: calc(2 * #{$desk-spinner-offset});
   }
 }
 
 #spinner1 {
-  background: purple;
   transform: rotate(0deg) translate(200vw) rotate(0deg);
+  @include break(tab) {
+    transform: rotate(0deg) translate($desk-spinner-offset) rotate(0deg);
+  }
 }
 #spinner2 {
-  background: blue;
   transform: rotate(240deg) translate(200vw) rotate(0deg);
+  @include break(tab) {
+    transform: rotate(240deg) translate($desk-spinner-offset) rotate(0deg);
+  }
 }
 #spinner3 {
-  background: grey;
   transform: rotate(120deg) translate(200vw) rotate(0deg);
+  @include break(tab) {
+    transform: rotate(120deg) translate($desk-spinner-offset) rotate(0deg);
+  }
 }

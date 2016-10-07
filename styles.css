@@ -1,5 +1,6 @@
 body {
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
 
 .container {
   display: flex;
@@ -13,25 +14,97 @@ body {
 .ui-container {
   width: 100vw;
   height: 100vh;
-  border: 1px solid black;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center; }
+  @media (min-width: 600px) {
+    .ui-container {
+      max-width: 400px;
+      max-height: 600px; } }
 
-.ui-info {
+.ui-header {
+  height: 4rem;
   width: 100%;
-  height: calc(100% - 2rem); }
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
+  color: #848484;
+  font-size: 24px;
+  border-bottom: 2px solid #848484; }
 
 .ui-controls {
-  height: 2rem;
+  height: 4rem;
   width: 100%;
-  background: red;
+  background: #1a1a1a;
+  color: #848484;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center; }
+  align-items: stretch;
+  z-index: 1;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  border-top: 2px solid #848484; }
+
+.ui-controls-item {
+  display: flex;
+  flex: 1 1 33%;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  transition: color 1s ease-in; }
+  .ui-controls-item.active {
+    color: black; }
+
+#ui-controls-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  height: 100%;
+  background: #848484;
+  transition: left 1s ease-in;
+  z-index: -1; }
+  #ui-controls-background.spinner1 {
+    left: 0; }
+  #ui-controls-background.spinner2 {
+    left: 33%; }
+  #ui-controls-background.spinner3 {
+    left: 67%; }
+
+@media (min-width: 600px) {
+  .spinner-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    border: 1500px solid rgba(242, 242, 242, 0.9);
+    box-sizing: content-box;
+    pointer-events: none; } }
+
+.ui-info {
+  width: 100%;
+  height: calc(100% - 2 * 4rem);
+  background: rgba(242, 242, 242, 0.9); }
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */ }
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000; }
 
 .spinner-container {
   position: relative;
@@ -41,7 +114,10 @@ body {
   height: 100%;
   transform-origin: center;
   transition: transform 1s ease-in;
-  z-index: -1; }
+  z-index: 0; }
+  @media (min-width: 600px) {
+    .spinner-container {
+      left: -600px; } }
 
 .spinner-chip {
   height: 100%;
@@ -50,7 +126,17 @@ body {
   left: 0;
   width: 100%;
   font-size: 2rem;
-  font-weight: bold; }
+  font-weight: bold;
+  background: #1a1a1a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #b9b9b9;
+  padding: 0px 16px;
+  box-sizing: border-box;
+  overflow: scroll; }
+
+a {
+  color: #848484; }
 
 .spinner-decoration {
   position: absolute;
@@ -58,25 +144,35 @@ body {
   left: 50%;
   border: 2px solid;
   border-radius: 50%;
-  width: 500px;
-  height: 500px;
+  width: 400vw;
+  height: 400vw;
   z-index: -1;
   transform: translate(-50%, -50%); }
   .spinner-decoration.decoration2 {
-    transform: translate(-45%, -45%); }
+    transform: translate(-48%, -49%); }
   .spinner-decoration.decoration3 {
-    transform: translate(-55%, -55%); }
+    transform: translate(-51%, -52%); }
+  @media (min-width: 600px) {
+    .spinner-decoration {
+      width: calc(2 * 600px);
+      height: calc(2 * 600px); } }
 
 #spinner1 {
-  background: purple;
   transform: rotate(0deg) translate(200vw) rotate(0deg); }
+  @media (min-width: 600px) {
+    #spinner1 {
+      transform: rotate(0deg) translate(600px) rotate(0deg); } }
 
 #spinner2 {
-  background: blue;
   transform: rotate(240deg) translate(200vw) rotate(0deg); }
+  @media (min-width: 600px) {
+    #spinner2 {
+      transform: rotate(240deg) translate(600px) rotate(0deg); } }
 
 #spinner3 {
-  background: grey;
   transform: rotate(120deg) translate(200vw) rotate(0deg); }
+  @media (min-width: 600px) {
+    #spinner3 {
+      transform: rotate(120deg) translate(600px) rotate(0deg); } }
 
 /*# sourceMappingURL=styles.css.map */
