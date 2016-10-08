@@ -72,14 +72,14 @@ body {
   width: 33%;
   height: 100%;
   background: #848484;
-  transition: left 1s ease-in;
+  transition: transform 1s ease-in;
   z-index: -1; }
   #ui-controls-background.spinner1 {
-    left: 0; }
+    transform: translateX(0%); }
   #ui-controls-background.spinner2 {
-    left: 33%; }
+    transform: translateX(100%); }
   #ui-controls-background.spinner3 {
-    left: 67%; }
+    transform: translateX(202%); }
 
 @media (min-width: 600px) {
   .spinner-mask {
@@ -100,7 +100,8 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
-  /* remove scrollbar space */ }
+  /* remove scrollbar space */
+  height: 0px; }
 
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
@@ -120,16 +121,15 @@ body {
       left: -600px; } }
 
 .spinner-chip {
-  height: 100%;
+  height: calc(100% + 1px);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 2rem;
   font-weight: bold;
   background: #1a1a1a;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #b9b9b9;
   padding: 0px 16px;
   box-sizing: border-box;

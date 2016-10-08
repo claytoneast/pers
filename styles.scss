@@ -105,16 +105,16 @@ body {
   width: 33%;
   height: 100%;
   background: $header-gray;
-  transition: left 1s ease-in;
+  transition: transform 1s ease-in;
   z-index: -1;
   &.spinner1 {
-    left: 0;
+    transform: translateX(0%);
   }
   &.spinner2 {
-    left: 33%;
+    transform: translateX(100%);
   }
   &.spinner3 {
-    left: 67%;
+    transform: translateX(202%);
   }
 }
 
@@ -140,6 +140,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;  /* remove scrollbar space */
+  height: 0px;
   // background: transparent;  /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
@@ -163,16 +164,15 @@ body {
 
 
 .spinner-chip {
-  height: 100%;
+  height: calc(100% + 1px);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 2rem;
   font-weight: bold;
   background: $mellowBlack;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
+  font-size: 20px;
   color: $body-gray;
   padding: 0px 16px;
   box-sizing: border-box;
