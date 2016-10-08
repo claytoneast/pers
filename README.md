@@ -1,4 +1,4 @@
 # claytoneast
 
 
-Personal site, so static it's practically coral reef
+Personal site, about as static as a bleached coral reef.
