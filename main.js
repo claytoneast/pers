@@ -1,5 +1,5 @@
 let spinner
-let spinnerLocation = 1 // spinner1 in view
+let spinnerLocation = 1
 let currentRotation = 0
 
 window.onload = function () {
@@ -11,6 +11,12 @@ function initializePage () {
   let uiControls = document.getElementsByClassName('ui-controls-item')
   Array.from(uiControls).forEach(function (elem) {
     elem.addEventListener('click', changeTiles, false)
+  })
+  // Terrible hack to make the browser scrollbars disappear
+  let chipInners = document.getElementsByClassName('spinner-chip-inner')
+  Array.from(chipInners).forEach(function (elem) {
+    elem.style.paddingRight = elem.offsetWidth - elem.clientWidth + 'px'
+    elem.style.paddingBottom = elem.offsetHeight - elem.clientHeight + 'px'
   })
 }
 

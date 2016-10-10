@@ -21,9 +21,6 @@ $header-gray: #848484;
 $body-gray: #b9b9b9;
 $bg-gray: rgba(242, 242, 242, 0.9);
 
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Cormorant Garamond', serif;
-
 body {
   margin: 0;
   overflow: hidden;
@@ -136,16 +133,7 @@ body {
   width: 100%;
   height: calc(100% - 2 * #{$menu-height});
   background: $bg-gray;
-}
-
-::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
-  height: 0px;
-  // background: transparent;  /* optional: just make scrollbar invisible */
-}
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
+  position: relative;
 }
 
 .spinner-container {
@@ -162,9 +150,8 @@ body {
   }
 }
 
-
 .spinner-chip {
-  height: calc(100% + 1px);
+  height: calc(100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -174,9 +161,19 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   color: $body-gray;
-  padding: 0px 16px;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.spinner-chip-inner {
+  width: 100%;
+  height: 100%;
   overflow: scroll;
+  padding-right: 0px;
+}
+
+.spinner-chip-item {
+  padding: 0px 16px;
 }
 
 a {
