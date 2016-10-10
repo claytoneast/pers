@@ -134,7 +134,8 @@ body {
   height: calc(100% - 2 * #{$menu-height});
   background: $bg-gray;
   position: relative;
-  z-index: -2;
+  z-index: 0;
+  margin-bottom: -1px;
 }
 
 .spinner-container {
@@ -164,6 +165,7 @@ body {
   color: $body-gray;
   box-sizing: border-box;
   overflow: hidden;
+  z-index: 1;
 }
 
 .spinner-chip-inner {
@@ -189,7 +191,7 @@ a {
   border-radius: 50%;
   width: 400vw;
   height: 400vw;
-  z-index: -1;
+  z-index: -3;
   transform: translate(-50%, -50%);
   &.decoration2 {
     transform: translate(-48%, -49%);
