@@ -103,7 +103,7 @@ body {
   #ui-controls-background.spinner2 {
     transform: translateX(100%); }
   #ui-controls-background.spinner3 {
-    transform: translateX(202%); }
+    transform: translateX(200%); }
 
 @media (min-width: 600px) {
   .spinner-mask {
@@ -198,7 +198,5 @@ a {
   @media (min-width: 600px) {
     #spinner3 {
       transform: rotate(120deg) translate(600px) rotate(0deg); } }
-
-/*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=styles.css.map */
