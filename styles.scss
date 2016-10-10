@@ -134,6 +134,7 @@ body {
   height: calc(100% - 2 * #{$menu-height});
   background: $bg-gray;
   position: relative;
+  z-index: -2;
 }
 
 .spinner-container {

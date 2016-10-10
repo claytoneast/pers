@@ -121,7 +121,8 @@ body {
   width: 100%;
   height: calc(100% - 2 * 4rem);
   background: rgba(242, 242, 242, 0.9);
-  position: relative; }
+  position: relative;
+  z-index: -2; }
 
 .spinner-container {
   position: relative;
