@@ -27,7 +27,8 @@ body {
   -ms-flex-pack: end;
       justify-content: flex-end;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  z-index: 1; }
   @media (min-width: 600px) {
     .ui-container {
       max-width: 400px;
@@ -132,8 +133,7 @@ body {
   -webkit-transform: rotate(0deg);
   height: 100%;
   transform-origin: center;
-  transition: transform 1s ease-in;
-  z-index: 0; }
+  transition: transform 1s ease-in; }
   @media (min-width: 600px) {
     .spinner-container {
       left: -600px; } }
@@ -150,8 +150,7 @@ body {
   font-size: 20px;
   color: #b9b9b9;
   box-sizing: border-box;
-  overflow: hidden;
-  z-index: 1; }
+  overflow: hidden; }
 
 .spinner-chip-inner {
   width: 100%;
