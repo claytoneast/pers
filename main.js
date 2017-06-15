@@ -12,7 +12,6 @@ function initializePage () {
   Array.from(uiControls).forEach(function (elem) {
     elem.addEventListener('click', changeTiles, false)
   })
-  // Terrible hack to make the browser scrollbars disappear
   let chipInners = document.getElementsByClassName('spinner-chip-inner')
   Array.from(chipInners).forEach(function (elem) {
     elem.style.paddingRight = elem.offsetWidth - elem.clientWidth + 'px'

@@ -147,7 +147,6 @@ body {
   height: 100%;
   transform-origin: center;
   transition: transform 1s ease-in;
-  // z-index: 0;
   @include break(tab) {
     left: -$desk-spinner-offset;
   }
@@ -166,7 +165,6 @@ body {
   color: $body-gray;
   box-sizing: border-box;
   overflow: hidden;
-  // z-index: 1;
 }
 
 .spinner-chip-inner {
